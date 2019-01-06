@@ -160,7 +160,7 @@ module.exports = function (content) {
 
   var cb = this.async();
 
-  var publicPath = options.publicPath || (webpackOptions.output && webpackOptions.output.publicPath) || '/';
+  var publicPath = options.publicPath || (webpackOptions.output && webpackOptions.output.publicPath) || (this._compilation && this._compilation.outputOptions && this._compilation.outputOptions.publicPath) || '/';
   var embed = !!generatorOptions.embed;
 
   if (generatorOptions.cssTemplate) {
